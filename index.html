@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Formulario para emails | Enviar correo electrónico</title>
+
+    <meta name="title" content="Formulario para emails | Enviar correo electrónico">
+    <meta name="description" content="Formulario con estilos y validación para enviar emails">
+    <meta http-equiv="content-language" content="es">
+    <meta name="author" content="Sebastián Landazuri">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/tailwind.min.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="css/custom.css">
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    
+  </head>
+  <body>
+
+    <div class="container mx-auto mt-20 bg-white">     
+        <header id="header" class="bg-pink-800 p-3 font-bold">
+            Enviar Nuevo Mail
+        </header>
+
+
+        <form id="send-mail" class="py-10 px-5 max-w-lg mx-auto" method="POST">
+            <div class="mb-10">
+                <label for="email">De:</label>
+                <input class="bg-gray-100 border shadow p-3 w-full"  id="email_from" name="email_from" type="email" required>
+            </div>
+            <div class="mb-10">
+                <label for="email">Para:</label>
+                <input class="bg-gray-100 border shadow p-3 w-full"  id="email_to" name="email_to" type="email" required>
+            </div>
+            <div class="mb-10">
+                <label for="subject">Asunto</label>
+                <input class="bg-gray-100 border shadow p-3 w-full"  id="subject" name="subject" type="text" required>
+            </div>
+            <div class="mb-10"> 
+                <label for="message">Mensaje</label>
+                <textarea class="bg-gray-100 border shadow p-3 w-full" id="message" name="message" required></textarea>
+            </div>
+
+            <div  id="spinner">
+                <div class="sk-chase">
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                </div>
+            </div>
+            
+            <div class="flex justify-between">
+                    <button 
+                        id="send" class="w-full bg-blue-600 px-2 py-5 text-white items-center cursor-not-allowed opacity-50 mr-5 uppercase font-bold items-center flex justify-center" 
+                        name="submit" type="submit" 
+                    >Enviar
+                        <i class="material-icons right text-white ml-3">send</i>
+                    </button>
+
+                    <button 
+                        id="resetBtn" 
+                        class="w-full bg-green-600 px-2 py-5 text-white items-center uppercase font-bold items-center flex justify-center" 
+                        type="reset"
+                    >Resetear Form
+                            <i class="material-icons right ml-3">delete</i>
+                    </button>
+            </div>
+            <a href="" id="link">Hey</a>
+        </form> 
+    </div>
+
+    <script src="js/app.js"></script>
+
+  <footer>
+    Copyright © <span id="year_copyright"></span> Sebastián Landázuri G
+  </footer>
+
+  </body>
+</html>
+      
